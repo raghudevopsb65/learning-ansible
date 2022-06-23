@@ -4,6 +4,7 @@
     - name: Print Helloo
       ansible.builtin.debug:
         msg: Hello
-    - #name: Print Fruit
+    - name: Print Fruit
       debug:
         msg: Apple
+# name is an optional key , but
