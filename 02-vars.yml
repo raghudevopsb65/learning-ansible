@@ -40,5 +40,6 @@
         msg: Host Name = {{ansible_hostname}}, Memory = {{ ansible_memory_mb.real.free }}
     - name: Print FQDN
       ansible.builtin.debug:
-        msg: {{ ansible_fqdn }}
- 
+        msg: "{{ ansible_fqdn }}"
+        # if any value starts with a variable then we need to quote it, Either single or double
+
