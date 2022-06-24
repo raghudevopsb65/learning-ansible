@@ -48,7 +48,13 @@
   tasks:
     - name: Run uptime command
       ansible.builtin.shell: uptime
-      register: ansible_user
+      register: output
+
+    - name: Store variable in a standard name
+      ansible.builtin.set_fact:
+        UPTIME: "{{output.stdout}}"
+
     - name: Print Output of shell command
       ansible.builtin.debug:
-        msg: "{{ansible_user.stdout}}"
+        msg: "{{UPTIME}}"
+
