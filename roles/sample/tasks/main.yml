@@ -5,3 +5,13 @@
 - name: Print URL
   ansible.builtin.debug:
     msg: URL = {{URL}}
+
+- name: Copy file
+  ansible.builtin.copy:
+    src: sample.txt
+    dest: /tmp/sample-file.txt
+
+- name: Template a file
+  ansible.builtin.template:
+    src: sample.txt
+    dest: /tmp/sample-template.txt
